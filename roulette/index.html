@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roulette Sunda</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <button id="backBtn">Back</button>
+    <div id="saldoContainer"><span id="saldo">1000</span></div>
+</div>
+
+<!-- Popup Konfirmasi -->
+<div id="popupOverlay">
+  <div id="popupBox">
+    <img src="casino.jpeg" alt="Casino" id="popupImg">
+    <h2>baleg rek balik?</h2>
+    <div class="popup-buttons">
+      <button id="confirmYes">Hooh</button>
+      <button id="confirmNo">nuluykeun maén</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <h1>Roulette Sunda</h1>
+    <div class="wheel-wrapper">
+        <canvas id="wheel" width="400" height="400"></canvas>
+        <div class="pointer"></div>
+        <div id="roulette-ball" class="ball"></div>
+    </div>
+    <div class="betting">
+        <input type="number" id="specific-number" placeholder="0-36" min="0" max="36">
+        <button class="bet" data-type="color" data-value="red">Beureum</button>
+        <button class="bet" data-type="color" data-value="black">Hideung</button>
+        <button id="spin-btn">Puter</button>
+    </div>
+    <audio id="tick-sound" src="click.mp3" preload="auto"></audio>
+    <p id="result">Hasilna: -</p>
+    <p id="win">meunang/eleh</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

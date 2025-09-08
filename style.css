@@ -1,0 +1,162 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #0f0f0f);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* cegah scroll horizontal */
+}
+
+/* Animasi background */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin: 30px 10px;
+}
+
+header h1 {
+  font-size: clamp(24px, 5vw, 36px);
+  color: #00ff7f;
+  text-shadow: 0 0 10px #00ff7f, 0 0 20px #00ff7f;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f; }
+  to { text-shadow: 0 0 20px #00ff7f, 0 0 40px #00ff7f; }
+}
+
+header p {
+  font-size: clamp(14px, 3vw, 18px);
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Main content */
+main {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.game-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-card {
+  background: #111;
+  border: 3px solid #00ff7f;
+  border-radius: 15px;
+  width: min(250px, 90%);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,255,127,0.5);
+}
+
+.game-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Placeholder images/colors */
+.game-image.chess { background: url('images/chess.png') center/cover no-repeat; }
+.game-image.roulette { background: url('images/roulette.png') center/cover no-repeat; }
+
+h2 {
+  font-size: clamp(18px, 4vw, 24px);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: clamp(14px, 3vw, 16px);
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+/* Button */
+.play-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #00ff7f;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.play-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transition: left 0.3s;
+}
+
+.play-btn:hover::after {
+  left: 100%;
+}
+
+.play-btn:hover {
+  background: #ff6347;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main { padding: 10px; gap: 15px; }
+  .game-card { width: 90%; }
+  .game-image { height: 120px; }
+}

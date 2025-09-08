@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-bar">
+    <button id="backBtn" onclick="window.location.href='../homepage.html'">Balik</button>
+    <h1>Catur</h1>
+  </div>
+
+  <div class="game-wrapper">
+    <div class="chess-board" id="chessBoard"></div>
+    <div class="side-panel">
+      <div id="turnIndicator"></div>
+      <div id="status"></div>
+    </div>
+  </div>
+
+  <!-- Modal promotion -->
+  <div id="promotionModal" class="modal hidden">
+    <div class="modal-content">
+      <p>Promosikeun pion ka:</p>
+      <button data-piece="Q">Ratu</button>
+      <button data-piece="R">Benteng</button>
+      <button data-piece="B">Mentri</button>
+      <button data-piece="N">Kuda</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
