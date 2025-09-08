@@ -200,7 +200,7 @@ backBtn.addEventListener("click", () => {
 
 // Klik YA → ke homepage
 confirmYes.addEventListener("click", () => {
-  window.location.href = "../homepage.html"; 
+  window.location.href = "../index.html"; 
 });
 
 // Klik Lanjut Bermain → tutup popup
